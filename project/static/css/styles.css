@@ -324,10 +324,18 @@ tfoot,
 tr,
 td,
 th {
-  border-color: inherit;
+  /* border-color: inherit;
   border-style: solid;
-  border-width: 0;
+  border-width: 0; */
+  border-right: 1px solid #888888;
+  border-left: 1px solid #888888;
+  padding: .6em 1em;
 }
+
+tr:nth-child(odd) {
+  background: #33333311;
+}
+
 
 label {
   display: inline-block;

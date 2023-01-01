@@ -28,12 +28,17 @@ class Product(models.Model):
         return reverse('product_detail', args=[str(self.id)])
 
 
+class User(models.Model):
+    email = models.EmailField(max_length=255, unique=True)
+    name = models.CharField(max_length=25, unique=True)
+
+
 class Category(models.Model):
     name = models.CharField(max_length=100, unique=True)
+    subscribers = models.ManyToManyField(User)
 
     def __str__(self):
         return self.name.title()
-
 
 
 class News(models.Model):
@@ -42,4 +47,6 @@ class News(models.Model):
     text = models.TextField(null=True)
     rating = models.IntegerField()
     author_name = models.TextField(null=True)
+    category = models.ForeignKey(to=Category, on_delete=models.CASCADE, null=True)
     # в прошлом задании насколько я помню ничего не говорилось про авторов, поэтому я сделал такое быстрое/временное решение
+

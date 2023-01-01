@@ -27,13 +27,13 @@ Products
    <h3>{% current_time '%d %b %Y' %}</h3>
    <hr>
    {% if news %}
-   <table>
+   <table style="text-align: left;">
         <tr>
-            <td>Имя автора</td>
-            <td>Название</td>
-            <td>Текст</td>
-            <td>Оценки</td>
-            <td>Дата</td>
+            <th>Имя автора</th>
+            <th>Название</th>
+            <th>Текст</th>
+            <th>Оценки</th>
+            <th>Дата</th>
         </tr>
 
         {% for n in news %}
